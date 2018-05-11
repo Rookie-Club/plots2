@@ -18,3 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+# Cron Job log file
+set :output, "#{Dir.pwd}/log/cron_log.log"
+
+# To simply print date into the log file for checking if cron job is working properly
+every 1.minutes do
+  command "date -u" #This will print utc time every 1 min in log/cron_log.log file
+end
